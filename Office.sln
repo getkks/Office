@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7B2ADA90-41BF-4F49-91B0-40C546C36B65}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Office", "Source\Office\Office.fsproj", "{DD6591BE-C82C-40CA-BAF4-C0E7FB5CD3C3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Office.Runtime", "Source\Office.Runtime\Office.Runtime.fsproj", "{E2D62158-7493-4D5A-AAF7-5BF1FB8D10B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office.Utilities", "Source\Office.Utilities\Office.Utilities.csproj", "{17464AFF-02D7-4C2F-9402-8A8322BE5FF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD6591BE-C82C-40CA-BAF4-C0E7FB5CD3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6591BE-C82C-40CA-BAF4-C0E7FB5CD3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6591BE-C82C-40CA-BAF4-C0E7FB5CD3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6591BE-C82C-40CA-BAF4-C0E7FB5CD3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D62158-7493-4D5A-AAF7-5BF1FB8D10B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D62158-7493-4D5A-AAF7-5BF1FB8D10B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D62158-7493-4D5A-AAF7-5BF1FB8D10B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D62158-7493-4D5A-AAF7-5BF1FB8D10B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17464AFF-02D7-4C2F-9402-8A8322BE5FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17464AFF-02D7-4C2F-9402-8A8322BE5FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17464AFF-02D7-4C2F-9402-8A8322BE5FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17464AFF-02D7-4C2F-9402-8A8322BE5FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DD6591BE-C82C-40CA-BAF4-C0E7FB5CD3C3} = {7B2ADA90-41BF-4F49-91B0-40C546C36B65}
+		{E2D62158-7493-4D5A-AAF7-5BF1FB8D10B2} = {7B2ADA90-41BF-4F49-91B0-40C546C36B65}
+		{17464AFF-02D7-4C2F-9402-8A8322BE5FF0} = {7B2ADA90-41BF-4F49-91B0-40C546C36B65}
+	EndGlobalSection
+EndGlobal

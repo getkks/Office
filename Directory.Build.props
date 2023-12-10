@@ -1,0 +1,50 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<UseArtifactsOutput>true</UseArtifactsOutput>
+		<ArtifactsPath>$([System.IO.Path]::Combine($([System.IO.Path]::GetTempPath()), Artifacts))</ArtifactsPath>		<!--<ArtifactsPath>$(MSBuildThisFileDirectory)Artifacts</ArtifactsPath>-->
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<LangVersion>preview</LangVersion>
+		<TransformOnBuild>true</TransformOnBuild>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<TieredCompilation>true</TieredCompilation>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<TieredPGO>true</TieredPGO>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+		<!--<DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>-->
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.fsproj'">
+		<OtherFlags>$(OtherFlags) --utf8output --nologo --consolecolors</OtherFlags>		<!-- Improve compiler performance -->
+		<OtherFlags>$(OtherFlags) --test:GraphBasedChecking --test:ParallelOptimization --test:ParallelIlxGen</OtherFlags>		<!-- Disable Compiler warnings -->
+		<OtherFlags>$(OtherFlags) --nowarn:FS0760</OtherFlags>
+		<WarnOn>FS3560</WarnOn>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(LiteVersion)'=='true' and '$(MSBuildProjectExtension)'=='.fsproj'">		<!-- strip F# compiler sepcific data -->
+		<OtherFlags>$(OtherFlags) --nooptimizationdata --nointerfacedata --reflectionfree</OtherFlags>
+	</PropertyGroup>
+	<ItemGroup Condition="'$(MSBuildProjectExtension)'=='.fsproj'">
+		<PackageReference Include="InfoOf.Fody" Version="2.1.1" PrivateAssets="All"/>
+		<PackageReference Include="InlineIL.Fody" Version="1.7.4" PrivateAssets="All"/>
+		<PackageReference Include="LocalsInit.Fody" Version="1.1.0" PrivateAssets="All"/>
+	</ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DebugType>portable</DebugType>
+		<DefineConstants>DEBUG</DefineConstants>
+		<Tailcalls>false</Tailcalls>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<DebugType>none</DebugType>
+		<Tailcalls>true</Tailcalls>
+	</PropertyGroup>
+	<PropertyGroup>
+		<WeaverConfiguration>
+			<Weavers>
+				<LocalsInit Default="false"/>
+				<InfoOf/>
+				<InlineIL/>
+			</Weavers>
+		</WeaverConfiguration>
+	</PropertyGroup>	<!--<Import Project=".paket\Paket.Restore.targets" />-->
+</Project>

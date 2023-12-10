@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>CrossWind.Office</AssemblyName>
+    <RootNamespace>Office</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Office.Runtime\Office.Runtime.fsproj" />
+  </ItemGroup>
+</Project>
